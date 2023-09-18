@@ -2,6 +2,7 @@ from Base import BasePage
 from selenium.webdriver.common.by import By
 import datetime
 
+
 # Объекты, которые нужно найти на страницах, в переменных
 class Locators:
     LOCATOR_EL_CONTACTS = (By.LINK_TEXT, 'Контакты')
@@ -21,28 +22,31 @@ class Locators:
     # имя файла лога
     log_file_name = 'primer_autotesting_log{0}.txt'.format(str(datetime.datetime.today()))
 
+
 # Ещё один wrapper для тестов
 class Helper(BasePage):
 
+    # переход в раздел контакты, находим лого, кликаем
     def go_to_tensor_ru(self):
         self.find_element(Locators.LOCATOR_EL_CONTACTS).click()
         self.find_element(Locators.LOCATOR_IMG_TENSOR).click()
         self.switch_window()
         return
 
+    # поиск элемента 'Сила в людях' и остальных
     def where_is_power(self):
         return self.find_element(Locators.LOCATOR_EL_POWER)
 
-
     def where_is_about(self):
-        self.find_element(Locators.LOCATOR_EL_CLOSE_COOKIE).click()
-        self.find_element(Locators.LOCATOR_EL_ABOUT).click()
+        self.find_element(Locators.LOCATOR_EL_CLOSE_COOKIE).click()  # для клика по нужному объекту закрываем ->
+        # -> перекрывающее сообщение с куками
+        self.find_element(Locators.LOCATOR_EL_ABOUT).click() # потом кликаем на нужный объект
         return
 
     def where_is_work(self):
         return self.find_element(Locators.LOCATOR_EL_WORK)
 
-
+    # поиск и сравнение размеров картинок в разделе 'работаем'
     def image_same_size(self):
         image_list = self.find_elements(Locators.LOCATORS_IMG_WORK)
         width = set()
@@ -63,6 +67,7 @@ class Helper(BasePage):
         PARTNERS_SPB = self.find_element(Locators.LOCATOR_EL_PARTNERS_SPB)
         return PARTNERS_SPB
 
+    # запоминаем блок с партнерами, меняем регион, проверяем изменился ли блок парнеров
     def go_to_kamchatka(self):
         PARTNERS_SPB = self.find_element(Locators.LOCATOR_EL_PARTNERS_SPB)
         self.find_element(Locators.LOCATOR_EL_REGION).click()
@@ -73,11 +78,3 @@ class Helper(BasePage):
             return True
         else:
             return False
-
-
-
-
-
-
-
-

@@ -5,7 +5,8 @@ from loguru import logger
 # Два сценария в одном файле с использованием фикстуры и логированием в файл
 def test_tensorru(browser):
     logger.info('# Запуск сценария 1.')
-    tensor_page = Helper(browser)
+
+    tensor_page = Helper(browser) # создаем объект для дальнейшей работы своими методами
     tensor_page.go_to_site()
     tensor_page.go_to_tensor_ru()
 
