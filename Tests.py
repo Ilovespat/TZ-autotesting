@@ -2,7 +2,7 @@ from PageObjects.PageObjects import Helper
 from loguru import logger
 
 
-# Два сценария в одном файле с использованием фикстуры и логированием в файл
+# Два сценария в одном файле с использованием фикстуры и логированием в файл 
 def test_tensorru(browser):
     logger.info('# Запуск сценария 1.')
 
