@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 import datetime
 
 
-# Объекты, которые нужно найти на страницах, в переменных
+# Объекты, которые нужно найти на страницах, в переменных 
 class Locators:
     LOCATOR_EL_CONTACTS = (By.LINK_TEXT, 'Контакты')
     LOCATOR_IMG_TENSOR = (By.CLASS_NAME, 'sbisru-Contacts__logo-tensor.mb-12')
