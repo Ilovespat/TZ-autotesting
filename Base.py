@@ -1,7 +1,7 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-# Базовые методы для работы с WebDriver и обертка для WebDriverWait
+# Базовые методы для работы с WebDriver и обертка для WebDriverWait 
 class BasePage:
 
     # объявляем конструктор класса, который принимает экземпляр webdriver. Указываем сайт, с которого начинаем работу
